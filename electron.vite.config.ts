@@ -179,6 +179,7 @@ export default defineConfig(({ mode }) => {
       ].filter(Boolean),
       build: {
         outDir: isProduction ? 'release/app/dist/renderer' : undefined,
+        chunkSizeWarningLimit: 10000,
         target: 'es2020', // Avoid static initialization blocks for browser compatibility
         sourcemap: isProduction ? 'hidden' : true,
         minify: isProduction ? 'esbuild' : false, // Use esbuild for faster, less memory-intensive minification
